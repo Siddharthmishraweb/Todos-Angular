@@ -1,0 +1,22 @@
+<!-- <h4>Add your todos</h4> -->
+<!-- <app-add-todo></app-add-todo>  -->
+
+<!-- <div class="my-3">
+  <h3>{{ todo.title }}</h3>
+  <p>{{ todo.desc }}</p>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+    <label class="form-check-label" for="exampleCheck1">Mark as done</label>
+  </div>
+  <button class="btn btn-danger" (click)="onClick(todo)">Delete</button>
+</div> -->
+
+<div style="margin: 20px; padding: 15px; border: 1px solid #ccc; border-radius: 8px; background-color: #f8f9fa;">
+    <h5 [ngClass]="{'strike': !todo.active }" style="color: #007bff; font-size: 1.5em; margin-bottom: 10px;">{{ todo.title }}</h5>
+    <p [ngClass]="{'strike': !todo.active }" style="color: #495057; font-size: 1.2em; margin-bottom: 15px;">{{ todo.desc }}</p>
+    <div class="form-check" style="margin-bottom: 15px;">
+      <input type="checkbox" class="form-check-input" id="done{i}" style="margin-right: 5px;" name="done" (click)="onClickMarkDone(todo)" [checked]="!todo.active"/>
+      <label class="form-check-label" for="done{i}" style="font-size: 1.1em; color: #28a745; font-weight: bold;">Done</label>
+    </div>
+    <button class="btn btn-danger" style="background-color: #dc3545; border: none; padding: 8px 15px; font-size: 1em; color: #fff; cursor: pointer;" (click)="onClick(todo)">Delete</button>
+</div>
